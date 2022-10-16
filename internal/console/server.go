@@ -55,7 +55,7 @@ func server(c *cobra.Command, args []string) {
 	cacher := db.NewCacher(redisClient)
 
 	userRepo := repository.NewUserRepo(db.PostgresDB)
-	sessionRepo := repository.NewSessionRepo(db.PostgresDB)
+	sessionRepo := repository.NewSessionRepo(db.PostgresDB, cacher)
 	contentRepo := repository.NewContentRepository(db.PostgresDB, cacher)
 
 	registerUsecase := usecase.NewRegisterUsecase(userRepo)

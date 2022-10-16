@@ -8,10 +8,11 @@ import (
 )
 
 var (
-	DefaultTokenLength     = 25
-	DefaultSessionExpiry   = 24 * time.Hour * 30
-	DefaultDataCacheExpiry = 24 * time.Hour
-	DefaultMenuCacheExpiry = 24 * time.Hour
+	DefaultTokenLength       = 25
+	DefaultSessionExpiry     = 24 * time.Hour * 30
+	DefaultDataCacheExpiry   = 24 * time.Hour
+	DefaultMenuCacheExpiry   = 24 * time.Hour
+	DefaultAccessTokenExpiry = 24 * time.Hour
 )
 
 func init() {
