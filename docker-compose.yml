@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  redis_training:
+    build: .
+    ports:
+      - "9090:9090"
