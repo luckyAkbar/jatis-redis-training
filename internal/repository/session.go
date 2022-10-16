@@ -36,6 +36,11 @@ func (r *sessionRepo) Create(ctx context.Context, session *model.Session) error 
 		return err
 	}
 
+	if err := r.setToCache(ctx, session.AccessToken, session, config.DefaultAccessTokenExpiry); err != nil {
+		// report error and continue
+		logger.Error(err)
+	}
+
 	return nil
 }
 
@@ -54,7 +59,7 @@ func (r *sessionRepo) FindByAccessToken(ctx context.Context, accessToken string)
 	}
 
 	session := &model.Session{}
-	err = r.db.WithContext(ctx).Model(&model.Session{}).Where("access_token", accessToken).Take(session).Error
+	err = r.db.WithContext(ctx).Model(&model.Session{}).Where("access_token = ?", accessToken).Take(session).Error
 	switch err {
 	default:
 		logger.Error(err)
@@ -66,7 +71,6 @@ func (r *sessionRepo) FindByAccessToken(ctx context.Context, accessToken string)
 			// report error and continue
 			logger.Error(err)
 		}
-
 		return session, nil
 	}
 }
