@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "f818ed51-8747-4798-8acd-1de34850f035",
+		"name": "API soal Redis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23223677"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"\",\r\n    \"password\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://103.145.194.12/soal_redis/login",
+					"protocol": "http",
+					"host": [
+						"103",
+						"145",
+						"194",
+						"12"
+					],
+					"path": [
+						"soal_redis",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"\",\r\n    \"password\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://103.145.194.12/soal_redis/register",
+					"protocol": "http",
+					"host": [
+						"103",
+						"145",
+						"194",
+						"12"
+					],
+					"path": [
+						"soal_redis",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Menu",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "1z3kr4BAQUo___epJWiay7A4o8myiKOy9E1WOCw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/soal_redis/menu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"soal_redis",
+						"menu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "NTU3MjE4OWYtNGFkYS0xMWVkLWJiMDUtMDA1MDU2MDExMWQ0MjAyMi0xMC0xMyAxNjozNToxMS41MjIwMTM2OSArMDcwMCBXSUIgbT0rNzEuMjg5OTIxMTg3ZmFmZmFuMTM=",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://103.145.194.12/soal_redis/data",
+					"protocol": "http",
+					"host": [
+						"103",
+						"145",
+						"194",
+						"12"
+					],
+					"path": [
+						"soal_redis",
+						"data"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
