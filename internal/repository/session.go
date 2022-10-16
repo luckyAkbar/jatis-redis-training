@@ -81,7 +81,6 @@ func (r *sessionRepo) findFromCache(ctx context.Context, accessToken string) (*m
 		"token": utils.Dump(accessToken),
 	})
 
-	var session *model.Session
 	res, err := r.cacher.Get(ctx, accessToken)
 	switch err {
 	default:
@@ -93,6 +92,7 @@ func (r *sessionRepo) findFromCache(ctx context.Context, accessToken string) (*m
 		break
 	}
 
+	session := &model.Session{}
 	if err := json.Unmarshal([]byte(res), session); err != nil {
 		logger.Error(err)
 		return nil, err
